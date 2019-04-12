@@ -2,12 +2,14 @@ alembic==1.0.8
 autopep8==1.4.3
 Click==7.0
 Flask==1.0.2
+flask-marshmallow==0.10.0
 Flask-Migrate==2.4.0
 Flask-SQLAlchemy==2.3.2
 itsdangerous==1.1.0
 Jinja2==2.10.1
 Mako==1.0.8
 MarkupSafe==1.1.1
+marshmallow==2.19.2
 pycodestyle==2.5.0
 PyMySQL==0.9.3
 python-dateutil==2.8.0

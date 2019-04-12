@@ -6,7 +6,7 @@ class Holiday(db.Model):
     date = db.Column(db.String(20), unique=True, nullable=False)
     name = db.Column(db.String(50), unique=True, nullable=False)
     type_id = db.Column(db.Integer, db.ForeignKey(
-        'holiday_type.id'), nullable=False)
+        "holiday_type.id"), nullable=False)
 
     def __repr__(self):
         return f"Holiday('{self.date}', '{self.name}')"
