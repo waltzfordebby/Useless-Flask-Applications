@@ -24,9 +24,15 @@ def create_app(config_class=Config):
     from main.models.holiday import HolidayType
 
     # Blueprint imports
-    from main.applications.holiday_checker.routes import holiday
+    # Holiday Checker
+    from main.applications.holiday_checker.routes import holiday_main
+    from main.applications.holiday_checker.database_seeder.routes import holiday_seeder
+    from main.applications.holiday_checker.api.routes import holiday_api
 
     # Register Blueprint
-    app.register_blueprint(holiday)
+    # Holiday Checker
+    app.register_blueprint(holiday_main)
+    app.register_blueprint(holiday_seeder)
+    app.register_blueprint(holiday_api)
 
     return app

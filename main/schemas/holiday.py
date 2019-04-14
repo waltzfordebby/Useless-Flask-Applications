@@ -1,21 +1,18 @@
 from main import ma
-from main.models.holiday import Holiday, HolidayType
 
 
 class HolidayTypeSchema(ma.Schema):
-    class Meta:
-        model = HolidayType
-        fields = ("id", "name", "holidays")
+    holidays = ma.Nested("HolidaySchema", many=True, exclude=("type", ))
 
-    holidays = ma.List(ma.HyperlinkRelated("name"))
+    class Meta:
+        fields = ("id", "name", "holidays")
 
 
 class HolidaySchema(ma.Schema):
     class Meta:
-        model = Holiday
         fields = ("id", "date", "name", "type")
 
-    type = ma.Nested(HolidayTypeSchema)
+    type = ma.Nested(HolidayTypeSchema, exclude=("holidays",))
 
 
 holiday_schema = HolidaySchema(strict=True)

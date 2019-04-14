@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25rem)) 1fr;
+}
+
+.content {
+    grid-column: 2/4;
+}
+
+.centerhv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
