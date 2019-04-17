@@ -19,6 +19,6 @@ def is_holiday():
     if holiday is None:
         if current_day in weekends:
             return f"Walang Pasok, {weekends[current_day]} ngayun!"
-        return f"May Pasok {weekdays[current_day]}!"
+        return f"May Pasok {weekdays[current_day]} ngayon!"
 
     return f"Walang pasok, {holiday.name} ngayun!"
